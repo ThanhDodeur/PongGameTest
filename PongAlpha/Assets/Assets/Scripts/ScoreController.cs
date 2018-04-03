@@ -8,16 +8,20 @@ public class ScoreController : MonoBehaviour {
 
     private int scorePlayer1 = 0;
     private int scorePlayer2 = 0;
+    private GameObject crossScenesVariables;
 
     public GameObject scoreTextPlayer1;
     public GameObject scoreTextPlayer2;
-
-    
+   
     public int goalToWin;
 
+    private void Awake()
+    {
+        crossScenesVariables = GameObject.Find("crossScenesVariables");
+    }
     void Update ()
     {
-        GameObject crossScenesVariables = GameObject.Find("crossScenesVariables");
+         
         if (this.scorePlayer1 >= this.goalToWin || this.scorePlayer2 >= this.goalToWin)
         {
             if (this.scorePlayer1 > this.scorePlayer2) 

@@ -16,9 +16,9 @@ public class WinnerDisplay : MonoBehaviour {
         int winnerScore = crossScenesVariables.GetComponent<CrossSceneVariables>().winnerScore;
         int loserScore = crossScenesVariables.GetComponent<CrossSceneVariables>().loserScore;
         winnerDisplay.text = string.Format("Winner:\n {0} \n({1} - {2})", winner, winnerScore, loserScore);
-}
+    }
      
 
-	}	
+}	
 
 
