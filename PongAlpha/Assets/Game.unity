@@ -2384,6 +2384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreTextPlayer1: {fileID: 816206098}
   scoreTextPlayer2: {fileID: 1131142663}
+  crossScenesVariables: {fileID: 0}
   goalToWin: 3
 --- !u!1 &1915632910
 GameObject:

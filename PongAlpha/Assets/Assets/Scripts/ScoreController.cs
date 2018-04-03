@@ -12,13 +12,27 @@ public class ScoreController : MonoBehaviour {
     public GameObject scoreTextPlayer1;
     public GameObject scoreTextPlayer2;
 
+    
     public int goalToWin;
 
     void Update ()
     {
-        if(this.scorePlayer1 >= this.goalToWin || this.scorePlayer2 >= this.goalToWin)
+        GameObject crossScenesVariables = GameObject.Find("crossScenesVariables");
+        if (this.scorePlayer1 >= this.goalToWin || this.scorePlayer2 >= this.goalToWin)
         {
-            Debug.Log("Game Won");
+            if (this.scorePlayer1 > this.scorePlayer2) 
+            {
+                // sauve le score et le nom pour l'ecran GameOver;
+                crossScenesVariables.GetComponent<CrossSceneVariables>().winner = "Player 1";
+                crossScenesVariables.GetComponent<CrossSceneVariables>().winnerScore = this.scorePlayer1;
+                crossScenesVariables.GetComponent<CrossSceneVariables>().loserScore = this.scorePlayer2;
+            }
+            else
+            {
+                crossScenesVariables.GetComponent<CrossSceneVariables>().winner = "Player 2";
+                crossScenesVariables.GetComponent<CrossSceneVariables>().winnerScore = this.scorePlayer2;
+                crossScenesVariables.GetComponent<CrossSceneVariables>().loserScore = this.scorePlayer1;
+            }
             SceneManager.LoadScene("GameOver");
         }
        
